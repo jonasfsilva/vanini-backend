@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from chat.models import Chat, ChatInfo, ChatMessage, Client
 from configs.models import Activity, BannerHeader, BannerMid, GaleryTypeVideo, Site
 from configs.models import Contact
 from configs.models import DinamicTool
@@ -7,7 +6,6 @@ from configs.models import MenuItem
 from configs.models import NewsLetterLead
 from configs.models import Galery
 from posts.models import Post
-from quiz.models import Answer, Question, Quiz
 
 
 class SiteSerializer(serializers.ModelSerializer):
@@ -87,71 +85,3 @@ class BannerMidSerializer(serializers.ModelSerializer):
     class Meta:
         model = BannerMid
         fields = '__all__'
-
-
-class QuizSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Quiz
-        fields = '__all__'
-
-
-class QuestionSerializer(serializers.ModelSerializer):
-
-    answers = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Question
-        fields = '__all__'
-
-    def get_answers(self, obj):
-        return AnswerSerializer(obj.answer_set.all(), many=True).data
-
-
-class AnswerSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Answer
-        fields = '__all__'
-
-
-class ClientSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Client
-        fields = '__all__'
-
-
-class ChatInfoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ChatInfo
-        fields = '__all__'
-
-
-class ReplySerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = ChatMessage
-        fields = '__all__'
-    
-
-class ChatMessageSerializer(serializers.ModelSerializer):
-
-    answer = serializers.SerializerMethodField()
-    # reply = ReplySerializer(required=False, allow_null=True)
-
-    class Meta:
-        model = ChatMessage
-        fields = '__all__'
-        
-    def get_answer(self, obj):
-        return ReplySerializer(obj.answer).data
-
-
-class ChatSerializer(serializers.ModelSerializer):
-
-    messages = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Chat
-        fields = '__all__'
-
-    def get_messages(self, obj):
-        return ChatMessageSerializer(obj.messages.all(), many=True).data

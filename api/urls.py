@@ -23,23 +23,17 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 
 router.register(r'contacts', views.ContactModelViewSet, basename='contacts')
-router.register(r'sites', views.SiteModelViewSet, basename='sites')
 router.register(r'dinamic-tools', views.DinamicToolModelViewSet, basename='dinamic_tools')
 router.register(r'menu-items', views.MenuItemModelViewSet, basename='menu_items')
-router.register(r'activitys', views.ActivityModelViewSet, basename='activitys')
 router.register(r'galery-images', views.GaleryModelViewSet, basename='galery_images')
 router.register(r'galery-videos', views.GaleryTypeVideoModelViewSet, basename='galery_videos')
 router.register(r'news-letter', views.NewsLetterLeadModelViewSet, basename='news-letter')
 router.register(r'posts', views.PostModelViewSet, basename='posts')
 router.register(r'banners-main', views.BannerHeaderModelViewSet, basename='banners')
 router.register(r'banners-down', views.BannerMidModelViewSet, basename='banners-mid')
-router.register(r'quiz', views.QuizModelViewSet, basename='quizzes')
-router.register(r'questions', views.QuestionModelViewSet, basename='questions')
-router.register(r'answers', views.AnswerModelViewSet, basename='answers')
+router.register(r'sites', views.SiteModelViewSet, basename='sites')
 
-router.register(r'client-info', views.ChatInfoModelViewSet, basename='client-info')
-router.register(r'chat', views.ChatModelViewSet, basename='chat')
-router.register(r'chat-messages', views.ChatMessageModelViewSet, basename='chat-messages')
+# router.register(r'activitys', views.ActivityModelViewSet, basename='activitys')
 
 urlpatterns = router.urls
 

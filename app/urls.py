@@ -17,14 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
-from api import views
-from api.views import index
+# from api import views
+# from api.views import index
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('planodegoverno/', views.pdf_view),
+    # path('', index),
+    # path('planodegoverno/', views.pdf_view),
     path('api/v1/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('summernote/', include('django_summernote.urls')),
