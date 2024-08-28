@@ -8,6 +8,7 @@ class Model(BaseModel):
 
 class Category(BaseModel):
     name = models.CharField(verbose_name="Nome")
+    image = models.ImageField(verbose_name="Imagem")
 
 
 class Product(BaseModel):
