@@ -6,6 +6,7 @@ from configs.models import DinamicTool
 from configs.models import MenuItem
 from configs.models import NewsLetterLead
 from configs.models import Galery
+from location.models import State
 from orders.models import QuotationInfo
 from posts.models import Post
 
@@ -92,6 +93,12 @@ class BannerMidSerializer(serializers.ModelSerializer):
 class ModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Model
+        fields = '__all__'
+
+
+class StateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = State
         fields = '__all__'
 
 
