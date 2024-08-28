@@ -33,6 +33,10 @@ router.register(r'banners-main', views.BannerHeaderModelViewSet, basename='banne
 router.register(r'banners-down', views.BannerMidModelViewSet, basename='banners-mid')
 router.register(r'sites', views.SiteModelViewSet, basename='sites')
 
+
+router.register(r'products', views.ProductViewSet, basename='products')
+router.register(r'quotations', views.QuotationInfoViewSet, basename='quotations')
+
 # router.register(r'activitys', views.ActivityModelViewSet, basename='activitys')
 
 urlpatterns = router.urls
