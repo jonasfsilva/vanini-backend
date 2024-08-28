@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'django_filters',
+    'localflavor',
+    'location',
     'storages',
     'rest_framework',
     'corsheaders',
@@ -56,6 +58,8 @@ INSTALLED_APPS = [
     'core',
     'api',
     'configs',
+    'catalog',
+    'orders',
 ]
 
 REST_FRAMEWORK = {

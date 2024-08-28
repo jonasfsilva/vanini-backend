@@ -1,6 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import render
 from rest_framework import viewsets
+from catalog.models import Product, ProductGalery
 from configs.models import BannerHeader, BannerMid, GaleryTypeVideo, Site
 from configs.models import Contact
 from configs.models import DinamicTool
@@ -17,8 +18,12 @@ from api.serializers import (
     MenuItemSerializer,
     NewsLetterLeadSerializer,
     PostSerializer,
+    ProductGalerySerializer,
+    ProductSerializer,
+    QuotationInfoSerializer,
     SiteSerializer,
 )
+from orders.models import QuotationInfo
 from posts.models import Post
 
 
@@ -109,6 +114,34 @@ class BannerMidModelViewSet(viewsets.ModelViewSet):
     queryset = BannerMid.objects.all()
     http_method_names = [
         "get",
+    ]
+
+
+class ProductViewSet(viewsets.ModelViewSet):
+
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+    http_method_names = [
+        "get",
+    ]
+
+
+class ProductGaleryViewSet(viewsets.ModelViewSet):
+
+    serializer_class = ProductGalerySerializer
+    queryset = ProductGalery.objects.all()
+    http_method_names = [
+        "get",
+    ]
+
+
+class QuotationInfoViewSet(viewsets.ModelViewSet):
+
+    serializer_class = QuotationInfoSerializer
+    queryset = QuotationInfo.objects.all()
+    http_method_names = [
+        "get",
+        "post",
     ]
 
 

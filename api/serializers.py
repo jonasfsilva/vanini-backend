@@ -1,10 +1,12 @@
 from rest_framework import serializers
+from catalog.models import Category, Model, Product, ProductGalery
 from configs.models import Activity, BannerHeader, BannerMid, GaleryTypeVideo, Site
 from configs.models import Contact
 from configs.models import DinamicTool
 from configs.models import MenuItem
 from configs.models import NewsLetterLead
 from configs.models import Galery
+from orders.models import QuotationInfo
 from posts.models import Post
 
 
@@ -84,4 +86,34 @@ class BannerHeaderSerializer(serializers.ModelSerializer):
 class BannerMidSerializer(serializers.ModelSerializer):
     class Meta:
         model = BannerMid
+        fields = '__all__'
+
+
+class ModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Model
+        fields = '__all__'
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+
+class ProductGalerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductGalery
+        fields = '__all__'
+
+
+class QuotationInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = QuotationInfo
         fields = '__all__'
