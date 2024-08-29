@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-6_8@a7qk0vx3bx*oa3!g_heg-lh95iso1i608y(pm!$f5mq%yo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '0.0.0.0', '.ondigitalocean.app', '.vanini.com.br', 'localhost:4200', 'vanini.com.br']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '0.0.0.0', '.ondigitalocean.app', '.vanini.com.br', 'localhost:4200', 'vanini.com.br', 'localhost']
 
 CORS_ALLOWED_ORIGINS = [
     "https://vanini.vercel.app",

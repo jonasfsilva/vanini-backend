@@ -14,7 +14,7 @@ class CategoryClass(BaseSuperAdmin):
 
 @admin.register(Model)
 class ModelClass(BaseSuperAdmin):
-    ...
+    list_display = ["name",]
 
 
 class ProductCategoryInline(admin.StackedInline):

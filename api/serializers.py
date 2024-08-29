@@ -117,6 +117,7 @@ class ProductGalerySerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
 
     images = serializers.SerializerMethodField()
+    category = CategorySerializer(read_only=True)
 
     class Meta:
         model = Product
