@@ -108,16 +108,22 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
-        fields = '__all__'
-
-
 class ProductGalerySerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductGalery
         fields = '__all__'
+
+
+class ProductSerializer(serializers.ModelSerializer):
+
+    images = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+    def get_images(self, obj):
+        return ProductGalerySerializer(obj.images, many=True).data
 
 
 class QuotationInfoSerializer(serializers.ModelSerializer):

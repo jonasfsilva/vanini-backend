@@ -17,9 +17,15 @@ class ModelClass(BaseSuperAdmin):
     ...
 
 
+class ProductCategoryInline(admin.StackedInline):
+    model = ProductGalery 
+    extra = 0
+    exclude = ("deleted", "deleted_at", "another_position")
+
+
 @admin.register(Product)
 class ProductClass(BaseSuperAdmin):
-    ...
+    inlines = [ProductCategoryInline,]
 
 
 @admin.register(ProductGalery)
