@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.admin import BaseSuperAdmin
+from orders.models import QuotationInfo
+
+
+@admin.register(QuotationInfo)
+class QuotationInfoClass(BaseSuperAdmin):
+    ...
