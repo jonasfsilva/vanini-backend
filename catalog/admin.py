@@ -9,7 +9,7 @@ from core.admin import BaseSuperAdmin
 
 @admin.register(Category)
 class CategoryClass(BaseSuperAdmin):
-    ...
+    list_display = ["name", "image"]
     
 
 @admin.register(Model)
