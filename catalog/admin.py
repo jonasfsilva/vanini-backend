@@ -30,4 +30,4 @@ class ProductClass(BaseSuperAdmin):
 
 @admin.register(ProductGalery)
 class ProductGaleryClass(BaseSuperAdmin):
-    ...
+    list_display = ("product", "order", )
