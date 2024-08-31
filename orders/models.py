@@ -17,8 +17,8 @@ class QuotationInfo(BaseModel):
     zipcode = models.CharField(verbose_name="CEP", max_length=100)
     city = models.CharField(verbose_name="Cidade", max_length=100)
     district = models.CharField(verbose_name="CEP", max_length=100)
-    uf = BRStateField(
-        verbose_name="estado", choices=STATE_CHOICES, null=True, blank=True
+    state = BRStateField(
+        verbose_name="estado", choices=STATE_CHOICES,
     )
 
     quantity = models.PositiveIntegerField(default=1)
