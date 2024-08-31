@@ -4,7 +4,7 @@ from core.models import BaseModel
 
 class Model(BaseModel):
     name = models.CharField(verbose_name="Nome")
-    
+
     def __str__(self) -> str:
         return self.name
 
@@ -12,7 +12,7 @@ class Model(BaseModel):
 class Category(BaseModel):
     name = models.CharField(verbose_name="Nome")
     image = models.ImageField(verbose_name="Imagem")
-    
+
     def __str__(self) -> str:
         return self.name
 

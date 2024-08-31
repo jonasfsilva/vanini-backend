@@ -2,7 +2,8 @@ from django.db import models
 
 from catalog.models import Model
 from core.models import BaseModel
-from location.models import State
+from localflavor.br.br_states import STATE_CHOICES
+from localflavor.br.models import BRStateField
 
 
 class QuotationInfo(BaseModel):
@@ -16,7 +17,9 @@ class QuotationInfo(BaseModel):
     zipcode = models.CharField(verbose_name="CEP", max_length=100)
     city = models.CharField(verbose_name="Cidade", max_length=100)
     district = models.CharField(verbose_name="CEP", max_length=100)
-    state = models.ForeignKey(State, on_delete=models.PROTECT)
+    uf = BRStateField(
+        verbose_name="estado", choices=STATE_CHOICES, null=True, blank=True
+    )
 
     quantity = models.PositiveIntegerField(default=1)
     delivery_date = models.DateField(auto_now=False, auto_now_add=False)

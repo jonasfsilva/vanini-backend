@@ -131,3 +131,4 @@ class QuotationInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = QuotationInfo
         fields = '__all__'
+
