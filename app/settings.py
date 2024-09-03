@@ -36,6 +36,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://vanini.com.br",
     "https://www.vanini.com.br",
     "https://api.vanini.com.br",
+    "https://vanini-api-cxxqx.ondigitalocean.app"
 ]
 # Application definition
 
