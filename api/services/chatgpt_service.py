@@ -3,7 +3,7 @@ from chat.models import ChatInfo
 from openai import OpenAI
 
 # Carrega a chave da API do OpenAI a partir das variáveis de ambiente
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("CHATGPT_KEY")
 # OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Cria o cliente OpenAI com a chave da API
